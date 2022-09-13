@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  react-app:
+    container_name: react_app
+    restart: on-failure
+    build: .
+    volumes:
+      - ./src:/app/src
+    ports:
+      - "3000:3000"
+    command: npm start --host 0.0.0.0 --port 3000
